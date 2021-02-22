@@ -106,7 +106,7 @@ const Home = () => {
                     <p> Trong mọi trường hợp, BTC bảo lưu quyền thay đổi, bổ sung hoặc chỉnh sửa một phần hoặc toàn bộ nội dung của Thể Lệ này miễn là những sửa đổi hoặc bổ sung đó không làm ảnh hưởng đến quyền lợi của thí sinh</p>
                 </Card.Text>
                 <Button variant="primary">
-                    <Link style={{color: 'white'}} to={DonDangKy} target="_blank" download>Nhấn vào đây để tải về đơn dự thi</Link>
+                    <a style={{color: 'white'}} href={DonDangKy} target="_blank" download>Nhấn vào đây để tải về đơn dự thi</a>
                 </Button>
             </Card.Body>
             <Card.Footer className="text-muted">
