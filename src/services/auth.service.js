@@ -21,3 +21,7 @@ export const signin = (name, password) => {
         return response.data
     })
 }
+
+export const getcurrentUser = () => {
+    return JSON.parse(localStorage.getItem('currentUser'))
+}

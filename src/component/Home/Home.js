@@ -3,11 +3,16 @@ import { Card, Button } from 'react-bootstrap'
 import { Link} from 'react-router-dom'
 import './Home.css'
 
+import {getcurrentUser} from '../../services/auth.service'
+import SignIn from '../SignIn/SignIn'
 import DonDangKy from '../../Don-dang-ky-thi-hat-2021.pdf'
 
 const Home = () => {
+
+    const user = getcurrentUser()
+    console.log(user)
     return (
-        <Card>
+        (user !== null ? <Card>
             <Card.Body>
                 <Card.Title>
                     <div className="cardtitle">
@@ -111,7 +116,9 @@ const Home = () => {
                 <p>Giám Đốc Điều Hành</p>
                 <p>Huong Duong Universal Media</p>
             </Card.Footer>
-        </Card>
+        </Card> 
+        :
+        <SignIn />)
     )
 }
 
