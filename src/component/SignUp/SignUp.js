@@ -46,7 +46,7 @@ const SingUp = () => {
                 Name:
             </label>
             <br/>
-            <input type="text" name="name" value={state.name} onChange={handleChange} required/>
+            <input type="email" name="name" value={state.name} onChange={handleChange} required/>
             
             </div>
             <br/>
