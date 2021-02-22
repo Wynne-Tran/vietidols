@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/vietidols/static/css/main.71ab2ad5.chunk.css",
+    "main.js": "/vietidols/static/js/main.83d70e05.chunk.js",
+    "main.js.map": "/vietidols/static/js/main.83d70e05.chunk.js.map",
+    "runtime-main.js": "/vietidols/static/js/runtime-main.ffda63fa.js",
+    "runtime-main.js.map": "/vietidols/static/js/runtime-main.ffda63fa.js.map",
+    "static/css/2.150d169a.chunk.css": "/vietidols/static/css/2.150d169a.chunk.css",
+    "static/js/2.a9a757d4.chunk.js": "/vietidols/static/js/2.a9a757d4.chunk.js",
+    "static/js/2.a9a757d4.chunk.js.map": "/vietidols/static/js/2.a9a757d4.chunk.js.map",
+    "static/js/3.1ea8feef.chunk.js": "/vietidols/static/js/3.1ea8feef.chunk.js",
+    "static/js/3.1ea8feef.chunk.js.map": "/vietidols/static/js/3.1ea8feef.chunk.js.map",
+    "index.html": "/vietidols/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/vietidols/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.71ab2ad5.chunk.css.map": "/vietidols/static/css/main.71ab2ad5.chunk.css.map",
+    "static/js/2.a9a757d4.chunk.js.LICENSE.txt": "/vietidols/static/js/2.a9a757d4.chunk.js.LICENSE.txt",
+    "static/media/Don-dang-ky-thi-hat-2021.a84ef39e.pdf": "/vietidols/static/media/Don-dang-ky-thi-hat-2021.a84ef39e.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ffda63fa.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.a9a757d4.chunk.js",
+    "static/css/main.71ab2ad5.chunk.css",
+    "static/js/main.83d70e05.chunk.js"
+  ]
+}
