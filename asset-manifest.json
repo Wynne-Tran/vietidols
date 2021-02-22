@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vietidols/static/css/main.71ab2ad5.chunk.css",
-    "main.js": "/vietidols/static/js/main.9a224ee4.chunk.js",
-    "main.js.map": "/vietidols/static/js/main.9a224ee4.chunk.js.map",
+    "main.js": "/vietidols/static/js/main.60025895.chunk.js",
+    "main.js.map": "/vietidols/static/js/main.60025895.chunk.js.map",
     "runtime-main.js": "/vietidols/static/js/runtime-main.ffda63fa.js",
     "runtime-main.js.map": "/vietidols/static/js/runtime-main.ffda63fa.js.map",
     "static/css/2.150d169a.chunk.css": "/vietidols/static/css/2.150d169a.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.ad265ab3.chunk.js",
     "static/css/main.71ab2ad5.chunk.css",
-    "static/js/main.9a224ee4.chunk.js"
+    "static/js/main.60025895.chunk.js"
   ]
 }
