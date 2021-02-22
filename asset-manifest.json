@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.71ab2ad5.chunk.css",
-    "main.js": "/static/js/main.995d968c.chunk.js",
-    "main.js.map": "/static/js/main.995d968c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.bc04f1bb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.bc04f1bb.js.map",
-    "static/css/2.150d169a.chunk.css": "/static/css/2.150d169a.chunk.css",
-    "static/js/2.ad265ab3.chunk.js": "/static/js/2.ad265ab3.chunk.js",
-    "static/js/2.ad265ab3.chunk.js.map": "/static/js/2.ad265ab3.chunk.js.map",
-    "static/js/3.1ea8feef.chunk.js": "/static/js/3.1ea8feef.chunk.js",
-    "static/js/3.1ea8feef.chunk.js.map": "/static/js/3.1ea8feef.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.150d169a.chunk.css.map": "/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.71ab2ad5.chunk.css.map": "/static/css/main.71ab2ad5.chunk.css.map",
-    "static/js/2.ad265ab3.chunk.js.LICENSE.txt": "/static/js/2.ad265ab3.chunk.js.LICENSE.txt",
-    "static/media/Don-dang-ky-thi-hat-2021.a84ef39e.pdf": "/static/media/Don-dang-ky-thi-hat-2021.a84ef39e.pdf"
+    "main.css": "/vietidols.com/static/css/main.71ab2ad5.chunk.css",
+    "main.js": "/vietidols.com/static/js/main.3ed4a467.chunk.js",
+    "main.js.map": "/vietidols.com/static/js/main.3ed4a467.chunk.js.map",
+    "runtime-main.js": "/vietidols.com/static/js/runtime-main.1f8f690f.js",
+    "runtime-main.js.map": "/vietidols.com/static/js/runtime-main.1f8f690f.js.map",
+    "static/css/2.150d169a.chunk.css": "/vietidols.com/static/css/2.150d169a.chunk.css",
+    "static/js/2.ad265ab3.chunk.js": "/vietidols.com/static/js/2.ad265ab3.chunk.js",
+    "static/js/2.ad265ab3.chunk.js.map": "/vietidols.com/static/js/2.ad265ab3.chunk.js.map",
+    "static/js/3.1ea8feef.chunk.js": "/vietidols.com/static/js/3.1ea8feef.chunk.js",
+    "static/js/3.1ea8feef.chunk.js.map": "/vietidols.com/static/js/3.1ea8feef.chunk.js.map",
+    "index.html": "/vietidols.com/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/vietidols.com/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.71ab2ad5.chunk.css.map": "/vietidols.com/static/css/main.71ab2ad5.chunk.css.map",
+    "static/js/2.ad265ab3.chunk.js.LICENSE.txt": "/vietidols.com/static/js/2.ad265ab3.chunk.js.LICENSE.txt",
+    "static/media/Don-dang-ky-thi-hat-2021.a84ef39e.pdf": "/vietidols.com/static/media/Don-dang-ky-thi-hat-2021.a84ef39e.pdf"
   },
   "entrypoints": [
-    "static/js/runtime-main.bc04f1bb.js",
+    "static/js/runtime-main.1f8f690f.js",
     "static/css/2.150d169a.chunk.css",
     "static/js/2.ad265ab3.chunk.js",
     "static/css/main.71ab2ad5.chunk.css",
-    "static/js/main.995d968c.chunk.js"
+    "static/js/main.3ed4a467.chunk.js"
   ]
 }
