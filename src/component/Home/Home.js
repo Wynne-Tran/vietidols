@@ -5,7 +5,7 @@ import './Home.css'
 
 import {getcurrentUser} from '../../services/auth.service'
 import SignIn from '../SignIn/SignIn'
-import DonDangKy from './public/Don-dang-ky-thi-hat-2021.pdf'
+import DonDangKy from './Don-dang-ky-thi-hat-2021.pdf'
 
 const Home = () => {
 
