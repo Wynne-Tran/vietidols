@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./SignIn.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+
 import { signin } from "../../services/auth.service";
+import Loader from "../Loader/Loader";
 
 const SignIn = () => {
   const history = useHistory();
@@ -10,6 +12,7 @@ const SignIn = () => {
     name: "",
     password: "",
   });
+  const [loader, setLoader] = useState(false);
 
   const [mess, setMess] = useState("");
 
@@ -22,13 +25,16 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoader(true);
 
     signin(state.name, state.password).then(
       () => {
+        setLoader(false);
         history.push("/");
         window.location.reload();
       },
       (error) => {
+        setLoader(false);
         const resMess = error.response.data.errors;
         setMess(resMess);
       }
@@ -72,8 +78,12 @@ const SignIn = () => {
               Don't have an account? <br /> Click here to Sign Up
             </Link>
           </div>
-          <button className="btn btn-primary btn-block" type="submit">
-            Sign In
+          <button
+            className="btn btn-primary btn-block"
+            type="submit"
+            disabled={loader}
+          >
+            {loader ? <Loader /> : "Sign In"}
           </button>
         </form>
       </div>
