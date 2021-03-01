@@ -6,6 +6,7 @@ import "./App.css";
 import Home from "./component/Home/Home";
 import SignUp from "./component/SignUp/SignUp";
 import SignIn from "./component/SignIn/SignIn";
+import OnlineRegister from "./component/OnlineRegister/OnlineRegister";
 
 function App() {
   const isLogged = () => {
@@ -42,6 +43,7 @@ function App() {
         />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/online-register" component={OnlineRegister} />
         <Route render={() => <h1>404 Error</h1>} />
       </Switch>
     </div>
