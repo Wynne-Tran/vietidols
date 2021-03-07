@@ -31,3 +31,7 @@ export const getcurrentUser = () => {
 export const verifyUser = (userId, secretCode) => {
   return axios.get(apiUrl + `/auth/verify-account/${userId}/${secretCode}`);
 };
+
+export const sendLinkToUser = (userId) => {
+  return axios.get(apiUrl + `/auth/send-link/${userId}`);
+};
