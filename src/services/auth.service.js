@@ -1,27 +1,33 @@
-import axios from 'axios'
-import apiUrl from '../api'
+import axios from "axios";
+import apiUrl from "../api";
 
 export const signup = (info) => {
-    const headers = {
-        'Content-Type': 'application/json'
-    }
+  const headers = {
+    "Content-Type": "application/json",
+  };
 
-    return axios.post(apiUrl + '/auth/signup', info, { headers: headers})
-}
+  return axios.post(apiUrl + "/auth/signup", info, { headers: headers });
+};
 
 export const signin = (name, password) => {
-    return axios.post(apiUrl + '/auth/signin', {
-        name, password
+  return axios
+    .post(apiUrl + "/auth/signin", {
+      name,
+      password,
     })
-    .then(response => {
-        if (response.data.token) {
-            localStorage.setItem('currentUser', JSON.stringify(response.data))
-        }
+    .then((response) => {
+      if (response.data.token) {
+        localStorage.setItem("currentUser", JSON.stringify(response.data));
+      }
 
-        return response.data
-    })
-}
+      return response.data;
+    });
+};
 
 export const getcurrentUser = () => {
-    return JSON.parse(localStorage.getItem('currentUser'))
-}
+  return JSON.parse(localStorage.getItem("currentUser"));
+};
+
+export const verifyUser = (userId, secretCode) => {
+  return axios.get(apiUrl + `/auth/verify-account/${userId}/${secretCode}`);
+};

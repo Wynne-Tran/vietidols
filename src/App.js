@@ -7,6 +7,7 @@ import Home from "./component/Home/Home";
 import SignUp from "./component/SignUp/SignUp";
 import SignIn from "./component/SignIn/SignIn";
 import OnlineRegister from "./component/OnlineRegister/OnlineRegister";
+import UserVerification from "./component/UserVerification/UserVerification";
 
 function App() {
   const isLogged = () => {
@@ -30,6 +31,10 @@ function App() {
   return (
     <div>
       <Switch>
+        <Route
+          path="/verify-account/:userId/:secretCode"
+          component={UserVerification}
+        />
         <Route
           exact
           path="/"
