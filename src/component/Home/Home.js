@@ -6,6 +6,7 @@ import "./Home.css";
 import { getcurrentUser } from "../../services/auth.service";
 import SignIn from "../SignIn/SignIn";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import DonDangKy from "./Don-dang-ky-thi-hat-2021.pdf";
 
 const Home = () => {
@@ -304,6 +305,7 @@ const Home = () => {
           <p>Huong Duong Universal Media</p>
         </Card.Footer>
       </Card>
+      <Footer />
     </>
   ) : (
     <SignIn />
