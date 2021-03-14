@@ -7,6 +7,7 @@ import { Redirect } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Loader from "../Loader/Loader";
 import Modal from "../Modal/Modal";
+import Footer from "../Footer/Footer";
 
 import { sendLinkToUser } from "../../services/auth.service";
 
@@ -115,6 +116,8 @@ const UserVerification = () => {
           )}
         </Card>
       </Container>
+
+      <Footer fixed />
     </>
   );
 };
