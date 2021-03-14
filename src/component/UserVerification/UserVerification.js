@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { verifyUser } from "../../services/auth.service";
 import { Card, Container, Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 
@@ -9,7 +8,10 @@ import Loader from "../Loader/Loader";
 import Modal from "../Modal/Modal";
 import Footer from "../Footer/Footer";
 
-import { sendLinkToUser } from "../../services/auth.service";
+import {
+  sendVerificationLinkToUser,
+  verifyUser,
+} from "../../services/auth.service";
 
 const UserVerification = () => {
   const { userId, secretCode } = useParams();
@@ -24,7 +26,7 @@ const UserVerification = () => {
 
   const sendLinkHandler = () => {
     setLoader(true);
-    sendLinkToUser(userId)
+    sendVerificationLinkToUser(userId)
       .then(() => {
         setSendMessage("Sent successfully.");
         setShow(true);

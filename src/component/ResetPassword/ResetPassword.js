@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
 
-import { resetPassword } from "../../services/auth.service";
+import {
+  resetPassword,
+  sendResetPasswordLinkToUser,
+} from "../../services/auth.service";
 
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import Loader from "../Loader/Loader";
 
 const ResetPassword = () => {
   const location = useLocation();
+  const params = queryString.parse(location.search);
+  const { token, username } = params;
+
+  const [successfulSubmit, setSuccessfulSubmit] = useState(false);
+  const [loaderSubmit, setLoaderSubmit] = useState(false);
+  const [messageSubmit, setMessageSubmit] = useState("");
+
+  const [loaderRequest, setLoaderRequest] = useState(false);
+  const [messageRequest, setMessageRequest] = useState("");
 
   const formik = useFormik({
     initialValues: {
@@ -25,18 +38,61 @@ const ResetPassword = () => {
         .required("Must not be empty"),
     }),
     onSubmit: (values) => {
-      console.log(values);
-      const params = queryString.parse(location.search);
-      const { token, username } = params;
+      setLoaderSubmit(true);
+
       resetPassword(token, username, values.password)
         .then((res) => {
           console.log(res.data);
+          setLoaderSubmit(false);
+          setSuccessfulSubmit(true);
+          setMessageSubmit("Password has been changed!");
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.response.data);
+          setLoaderSubmit(false);
+          setSuccessfulSubmit(false);
+          setMessageSubmit("Unable to change password, please try again!");
         });
     },
   });
+
+  const sendAnotherHandler = () => {
+    setLoaderRequest(true);
+    sendResetPasswordLinkToUser(username)
+      .then((res) => {
+        setLoaderRequest(false);
+        setMessageRequest(`Sent to ${username}`);
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+        setLoaderRequest(false);
+        setMessageRequest(`Failed to send`);
+      });
+  };
+
+  const afterAction = messageSubmit ? (
+    <>
+      <div className="mt-2">{messageSubmit}</div>
+      <hr />
+      {successfulSubmit ? (
+        <div>
+          Please login again <a href="/">click here</a>
+        </div>
+      ) : (
+        <>
+          <Button
+            variant="danger"
+            onClick={sendAnotherHandler}
+            disabled={loaderRequest}
+          >
+            {loaderRequest ? <Loader /> : "Request another link"}
+          </Button>
+          <br />
+          {messageRequest}
+        </>
+      )}
+    </>
+  ) : null;
 
   return (
     <>
@@ -70,10 +126,17 @@ const ResetPassword = () => {
               {formik.errors.confirmPassword}
             </Form.Text>
           </Form.Group>
-          <Button variant="primary" type="submit" className="mt-4">
-            Submit
+          <Button
+            variant="primary"
+            type="submit"
+            className="mt-4"
+            disabled={loaderSubmit}
+          >
+            {loaderSubmit ? <Loader /> : "Submit"}
           </Button>
         </Form>
+
+        {afterAction}
       </Container>
       <Footer fixed />
     </>
