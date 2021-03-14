@@ -8,6 +8,7 @@ import SignUp from "./component/SignUp/SignUp";
 import SignIn from "./component/SignIn/SignIn";
 import OnlineRegister from "./component/OnlineRegister/OnlineRegister";
 import UserVerification from "./component/UserVerification/UserVerification";
+import ResetPassword from "./component/ResetPassword/ResetPassword";
 
 function App() {
   const isLogged = () => {
@@ -31,6 +32,7 @@ function App() {
   return (
     <div>
       <Switch>
+        <Route path="/resetUserPassword" component={ResetPassword} />
         <Route
           path="/verify-account/:userId/:secretCode"
           component={UserVerification}
