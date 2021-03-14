@@ -35,3 +35,7 @@ export const verifyUser = (userId, secretCode) => {
 export const sendLinkToUser = (userId) => {
   return axios.get(apiUrl + `/auth/send-link/${userId}`);
 };
+
+export const resetPassword = (token, name, password) => {
+  return axios.post(apiUrl + "/resetuserpassword", { token, name, password });
+};

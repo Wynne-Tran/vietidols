@@ -2,11 +2,17 @@ import React from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import queryString from "query-string";
+import { useLocation } from "react-router-dom";
+
+import { resetPassword } from "../../services/auth.service";
 
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 const ResetPassword = () => {
+  const location = useLocation();
+
   const formik = useFormik({
     initialValues: {
       password: "",
@@ -14,13 +20,21 @@ const ResetPassword = () => {
     },
     validationSchema: Yup.object({
       password: Yup.string().required("Password is required"),
-      confirmPassword: Yup.string().oneOf(
-        [Yup.ref("password"), null],
-        "Passwords must match"
-      ),
+      confirmPassword: Yup.string()
+        .oneOf([Yup.ref("password"), null], "Passwords must match")
+        .required("Must not be empty"),
     }),
     onSubmit: (values) => {
       console.log(values);
+      const params = queryString.parse(location.search);
+      const { token, username } = params;
+      resetPassword(token, username, values.password)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   });
 
@@ -46,7 +60,7 @@ const ResetPassword = () => {
           <Form.Group controlId="formGridLastName">
             <Form.Label>Confirm password</Form.Label>
             <Form.Control
-              type="text"
+              type="password"
               placeholder="Enter password again"
               name="confirmPassword"
               onChange={formik.handleChange}
